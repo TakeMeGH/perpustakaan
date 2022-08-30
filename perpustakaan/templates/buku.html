@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>JUDUL</th>
+                            <th>PENULIS</th>
+                            <th>PENERBIT</th>
+                            <th>JUMLAH</th>
+                            <th>GENRE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for buku in judul_buku %}
+                        <tr>
+                            <td><a href="{% url 'ubah_buku' buku.id %}">{{buku.judul}}</a></td>
+                            <td>{{buku.penulis}}</td>
+                            <td>{{buku.penerbit}}</td>
+                            <td>{{buku.jumlah}}</td>
+                            <td>{{buku.kelompok_id}}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
